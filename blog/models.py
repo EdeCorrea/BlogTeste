@@ -11,3 +11,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class Comentario(models.Model):
+    post = models.ForeignKey('Post', on_delete=models.PROTECT, blank=True,null=True)
+    comentario = models.TextField()
+    autor = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
+    data_criacao = models.DateTimeField(auto_now_add=True)
+

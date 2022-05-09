@@ -7,7 +7,10 @@
     <div class="mb-1 text-muted">{{ post.data_criacao }}</div>
     {{ post.conteudo|safe }}
   </div>
-    
 
+
+
+<p>Comentario</p>  
+<iframe src="/post/{{ post.id }}/criar-comentario" frameborder="2" style="height: 300px;"></iframe>
 
 {% endblock %}
