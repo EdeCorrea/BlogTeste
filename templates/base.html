@@ -163,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
         <a class="link-secondary" href="#">Cadastre-se</a>
       </div>
       <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="#">Meu Blog</a>
+        <a class="blog-header-logo text-dark" href="/">Meu Blog</a>
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center">
         <a class="link-secondary" href="#" aria-label="Search">
@@ -198,18 +198,20 @@ h1, h2, h3, h4, h5, h6 {
     </div>
   </div>
 
-  <div class="row mb-2">
-   
-    {% block content%} 
-    {% endblock %}
 
-  </div>
 
   <div class="row g-5">
     <div class="col-md-8">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        From the Firehose
+        Posts
       </h3>
+
+      <div class="row mb-2">
+   
+        {% block content %} 
+        {% endblock %}
+    
+      </div>
 
       <article class="blog-post">
         <h2 class="blog-post-title">Sample blog post</h2>

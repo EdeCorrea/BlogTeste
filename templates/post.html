@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+  <div class="blog-post" style="overflow: scroll;">
+    <h2 class="blog-post-title">{{ post.titulo }}</h2>
+    <div class="mb-1 text-muted">{{ post.data_criacao }}</div>
+    {{ post.conteudo|safe }}
+  </div>
+    
+
+
+{% endblock %}
