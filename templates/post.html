@@ -1,16 +1,37 @@
 {% extends 'base.html' %}
 
-
 {% block content%}
   <div class="blog-post" style="overflow: scroll;">
     <h2 class="blog-post-title">{{ post.titulo }}</h2>
+    <p><strong>Autor:</strong> {{ post.autor }}</p>
     <div class="mb-1 text-muted">{{ post.data_criacao }}</div>
     {{ post.conteudo|safe }}
   </div>
 
 
+<article class="blog-post">
+  <h2 class="blog-post-title">Comentários</h2>
+  
+  {% for comentario in comentarios %}
+  <p class="blog-post-meta">{{ comentario.data_criacao }} <strong>
+    {% if comentario.autor is not None %}
+    {{ comentario.autor }}
+    {% else %}
+    Usuário Anônimo
 
-<p>Comentario</p>  
-<iframe src="/post/{{ post.id }}/criar-comentario" frameborder="2" style="height: 300px;"></iframe>
+    {% endif%}
+   </strong></p>
+ 
+
+  <p>{{ comentario.comentario }} </p>
+  
+  <hr>
+
+  {% endfor %}
+
+  <h3 class="blog-post-title">Deixe seu comentário</h3>
+<iframe src="/post/{{ post.id }}/criar-comentario" frameborder="2" style="height: 300px;" ></iframe>
+  
+</article>
 
 {% endblock %}
