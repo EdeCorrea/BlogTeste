@@ -7,14 +7,18 @@ from blog.models import Comentario
 
 def home(request):
     posts = Post.objects.all()
-    dados = {"posts": posts}
+    post_mais_recente = Post.objects.latest('id')
+    dados = {"posts": posts,
+             "post_mais_recente": post_mais_recente}
     return render(request, 'home.html', dados)
 
 def post(request, pk):
     post = Post.objects.get(pk=pk)
+    post_mais_recente = Post.objects.latest('id')
     comentarios_deste_post = Comentario.objects.filter(post=pk).order_by('id')
     dados = {"post": post,
-             "comentarios": comentarios_deste_post
+             "comentarios": comentarios_deste_post,
+             "post_mais_recente": post_mais_recente
             }
     return render(request, 'post.html', dados)
 
