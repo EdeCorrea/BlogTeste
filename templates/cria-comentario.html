@@ -11,7 +11,7 @@
 
     <form method="POST" style="width: 100px; height: 100px; margin: 0%;" onsubmit="parent.location.reload();">{% csrf_token %}
 
-        <p style="padding: 0%;"><textarea placeholder="Escreva seu comentario aqui." name="comentario" id="" cols="30" rows="10" style="margin-bottom: 1%; padding-bottom: 1%;"></textarea></p>
+        <p style="padding: 0%;"><textarea placeholder="Escreva seu comentario aqui." required name="comentario" id="" cols="30" rows="10" style="margin-bottom: 1%; padding-bottom: 1%;"></textarea></p>
     
         <button type="submit" style="style="margin-bottom: 1%; padding-bottom: 1%;">Enviar</button>   
     

@@ -12,7 +12,7 @@ def home(request):
 
 def post(request, pk):
     post = Post.objects.get(pk=pk)
-    comentarios_deste_post = Comentario.objects.filter(post=pk)
+    comentarios_deste_post = Comentario.objects.filter(post=pk).order_by('id')
     dados = {"post": post,
              "comentarios": comentarios_deste_post
             }

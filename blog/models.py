@@ -9,6 +9,9 @@ class Post(models.Model):
     autor = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
     data_criacao = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ('-data_criacao',)
+
     def __str__(self):
         return self.titulo
 
