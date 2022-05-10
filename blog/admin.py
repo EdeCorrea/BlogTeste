@@ -16,4 +16,10 @@ class PostAdmin(admin.ModelAdmin):
         super(PostAdmin, self).save_model(request, obj, form, change)
 
 
-admin.site.register(Comentario)
+@admin.register(Comentario)
+class ComentarioAdmin(admin.ModelAdmin):
+    
+    readonly_fields = ('id', 'post', 'comentario', 'autor', 'data_criacao')
+
+    
+
