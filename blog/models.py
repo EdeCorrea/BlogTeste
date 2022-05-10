@@ -6,7 +6,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class Post(models.Model):
     titulo = models.CharField(max_length=200)
     conteudo = RichTextUploadingField()
-    autor = models.ForeignKey(User, on_delete=models.PROTECT)
+    autor = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
     data_criacao = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
