@@ -1,7 +1,9 @@
 # Projeto Blog
 ## Descrição
-Blog
-=================
+    Blog no qual as postagens são criadas pelo administrador através de páginas de administração do Django.
+    As postagens podem ser visualizadas por qualquer usuário da internet em páginas criadas com implementação de templates do Bootstrap. Esse usuário também pode enviar comentários sobre cada postagem.
+    Os comentários podem ser vistos logo após serem cadastrados.
+
 
 ### 🛠 Tecnologias
 
